@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
-
+import { useFetch } from "./helpers/useFetch";
 const App = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/")
-      .then((response) => response.json())
-      .then((data) => setPosts(data));
-  }, []);
+  const { posts, loading } = useFetch(
+    "https://jsonplaceholder.typicode.com/posts/"
+  );
 
   posts && console.log(posts);
   return (
     <div>
-      {posts &&
-        posts.map((post) => (
-          <div key={post.id}>
-            {post.userId}
-            <h1>{post.title}</h1>
-            <h3>{post.body}</h3>
-            <br />
-          </div>
-        ))}
+      {loading && <div>Loading...</div>}
+      {posts?.map((post) => (
+        <div key={post.id}>
+          {post.userId}
+          <h1>{post.title}</h1>
+          <h3>{post.body}</h3>
+          <br />
+        </div>
+      ))}
     </div>
   );
 };
