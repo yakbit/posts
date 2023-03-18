@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export const useFetch = (url: URL) => {
+  interface Post {
+    userId: number;
+    id: number;
+    title: String;
+    body: String;
+  }
+  const [posts, setPosts] = useState<Array<Post>>();
+  const [loading, setLoading] = useState<Boolean>(true);
 
   useEffect(() => {
     setLoading(true);

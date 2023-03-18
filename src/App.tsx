@@ -1,12 +1,15 @@
 import { useFetch } from "./helpers/useFetch";
+import { useState } from "react";
+import "./App.css";
 const App = () => {
   const { posts, loading } = useFetch(
-    "https://jsonplaceholder.typicode.com/posts/"
+    new URL("https://jsonplaceholder.typicode.com/posts/")
   );
 
   posts && console.log(posts);
+
   return (
-    <div>
+    <div className="App">
       {loading && <div>Loading...</div>}
       {posts?.map((post) => (
         <div key={post.id}>
