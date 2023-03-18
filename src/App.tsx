@@ -2,7 +2,7 @@ import { useFetch } from "./helpers/useFetch";
 import { useState } from "react";
 import "./App.css";
 const App = () => {
-  const { posts, loading } = useFetch(
+  const { posts, loading, error } = useFetch(
     new URL("https://jsonplaceholder.typicode.com/posts/")
   );
 
@@ -10,14 +10,15 @@ const App = () => {
 
   return (
     <div className="App">
+      {error && <li>Error: {error}</li>}
       {loading && <div>Loading...</div>}
       {posts?.map((post) => (
-        <div key={post.id}>
-          {post.userId}
+        <li key={post.id}>
+          <h4>{post.userId}</h4>
           <h1>{post.title}</h1>
-          <h3>{post.body}</h3>
+          <p>{post.body}</p>
           <br />
-        </div>
+        </li>
       ))}
     </div>
   );

@@ -9,14 +9,16 @@ export const useFetch = (url: URL) => {
   }
   const [posts, setPosts] = useState<Array<Post>>();
   const [loading, setLoading] = useState<Boolean>(true);
+  const [error, setError] = useState<String>("");
 
   useEffect(() => {
     setLoading(true);
     fetch(url)
       .then((response) => response.json())
       .then((data) => setPosts(data))
+      .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
 
-  return { posts, loading };
+  return { posts, loading, error };
 };
