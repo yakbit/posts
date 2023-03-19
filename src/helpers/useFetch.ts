@@ -7,9 +7,15 @@ export const useFetch = (url: URL) => {
     title: String;
     body: String;
   }
-  const [posts, setPosts] = useState<Array<Post>>();
-  const [loading, setLoading] = useState<Boolean>(true);
-  const [error, setError] = useState<String>("");
+
+  interface useFetchState {
+    posts: Array<Post>;
+    loading: Boolean;
+    error: String;
+  }
+  const [posts, setPosts] = useState<useFetchState["posts"]>([]);
+  const [loading, setLoading] = useState<useFetchState["loading"]>(true);
+  const [error, setError] = useState<useFetchState["error"]>("");
 
   useEffect(() => {
     setLoading(true);
