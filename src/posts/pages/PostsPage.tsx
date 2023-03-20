@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "../../components/Form";
 import { List } from "../../components/List";
-import { useFetch } from "../../helpers/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 export const PostsPage = () => {
   const { posts, loading, error } = useFetch(
     new URL("https://jsonplaceholder.typicode.com/posts/")

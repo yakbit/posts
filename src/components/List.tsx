@@ -1,4 +1,5 @@
 import React from "react";
+import { getPostsByUserId } from "../helpers";
 interface Props {
   posts: Array<{
     userId: number;
@@ -8,15 +9,18 @@ interface Props {
   }>;
   loading: Boolean;
   error?: String;
+  userId?: number;
 }
 
 export const List = (props: Props) => {
-  const { posts, loading, error } = props || {};
+  const { posts, loading, error, userId } = props || {};
+  const list = getPostsByUserId({ posts, userId });
+  console.log(list);
   return (
     <ul>
       {error && <li>Error: {error}</li>}
       {loading && <div>Loading...</div>}
-      {posts?.map((post) => (
+      {list?.map((post) => (
         <li key={post.id}>
           <h4>{post.userId}</h4>
           <h1>{post.title}</h1>
