@@ -18,9 +18,10 @@ export const PostsRoutes = () => {
           <Route path="home" element={<Home />} />
           <Route path="todosPosts" element={<PostsPage />} />
           <Route path="postsUsuario" element={<PostsUsuarioPage />} />
+
+          <Route path="searchByTitle" element={<SearchByTitlePage />} />
+          <Route path="post/:id" element={<PostPage />} />
           <Route path="/" element={<Navigate to={"/home"} />} />
-          <Route path="search" element={<SearchByTitlePage />} />
-          <Route path="post" element={<PostPage />} />
         </Routes>
       </div>
     </>

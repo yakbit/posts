@@ -1,5 +1,6 @@
 import React from "react";
 import { getPostsByUserId } from "../helpers";
+import { PostCard } from "./PostCard";
 interface Props {
   posts: Array<{
     userId: number;
@@ -17,17 +18,12 @@ export const List = (props: Props) => {
   const list = getPostsByUserId({ posts, userId });
   console.log(list);
   return (
-    <ul>
+    <div className="row rows-cols-1 row-cols-md-3 g-3">
       {error && <li>Error: {error}</li>}
       {loading && <div>Loading...</div>}
       {list?.map((post) => (
-        <li key={post.id}>
-          <h4>{post.userId}</h4>
-          <h1>{post.title}</h1>
-          <p>{post.body}</p>
-          <br />
-        </li>
+        <PostCard key={post.id} {...post} />
       ))}
-    </ul>
+    </div>
   );
 };
