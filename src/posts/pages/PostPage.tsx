@@ -25,7 +25,7 @@ export const PostPage = () => {
   return (
     <div className="row mt-5">
       <div className="col-12">
-        <h5>Usuario: {id}</h5>
+        <h5>Usuario: {userId}</h5>
         <h3>{title}</h3>
         <div>{body}</div>
         <p></p>
