@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 interface Post {
-  userId: number;
   id: number;
+  userId: number;
   title: String;
   body: String;
 }
@@ -20,7 +20,7 @@ export const Filter = (props: Props) => {
     setInputValue(target.value);
     console.log(target.value);
     const data = posts.filter((item) =>
-      item.title.toLowerCase().includes(target.value)
+      item.title.toLowerCase().trim().includes(target.value)
     );
     onFiltrar(data);
   };

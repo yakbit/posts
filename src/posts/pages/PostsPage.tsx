@@ -9,9 +9,7 @@ interface Post {
   title: String;
   body: String;
 }
-interface Posts {
-  posts: Array<Post>;
-}
+
 export const PostsPage = () => {
   const { posts, loading, error } = useFetch(
     new URL("https://jsonplaceholder.typicode.com/posts/")
@@ -25,7 +23,12 @@ export const PostsPage = () => {
     <>
       <Form></Form>
       <Filter posts={posts} onFiltrar={(event) => onFiltrar(event)} />
-      <List posts={posts} loading={loading} error={error}></List>;
+      <List
+        posts={listaFiltrada ? listaFiltrada : posts}
+        loading={loading}
+        error={error}
+      ></List>
+      ;
     </>
   );
 };
