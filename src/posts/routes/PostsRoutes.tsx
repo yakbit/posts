@@ -1,13 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "../../ui";
-import {
-  Home,
-  PostPage,
-  PostsPage,
-  PostsUsuarioPage,
-  SearchByTitlePage,
-} from "../pages";
+import { Home, PostPage, PostsPage, PostsUsuarioPage } from "../pages";
 
 export const PostsRoutes = () => {
   return (
@@ -19,7 +13,6 @@ export const PostsRoutes = () => {
           <Route path="todosPosts" element={<PostsPage />} />
           <Route path="postsUsuario" element={<PostsUsuarioPage />} />
 
-          <Route path="searchByTitle" element={<SearchByTitlePage />} />
           <Route path="post/:id" element={<PostPage />} />
           <Route path="/" element={<Navigate to={"/home"} />} />
         </Routes>

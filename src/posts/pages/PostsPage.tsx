@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { Filter } from "../../components/Filter";
-import { Form } from "../../components/Form";
 import { List } from "../../components/List";
 import { useFetch } from "../../hooks/useFetch";
 import { addPost } from "../../redux/states/posts";
@@ -24,8 +23,9 @@ export const PostsPage = () => {
   };
   return (
     <>
-      <Form></Form>
+      <hr />
       <Filter posts={posts} onFiltrar={(event) => onFiltrar(event)} />
+      <hr />
       <List
         posts={listaFiltrada ? listaFiltrada : posts}
         loading={loading}

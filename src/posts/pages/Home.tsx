@@ -1,8 +1,29 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+  const navigate = useNavigate();
   const handleGoAllPosts = () => {
-    console.log("ir a página de todos los posts");
+    navigate("/todosPosts");
   };
-  return <button onClick={handleGoAllPosts}>Ver todos posts</button>;
+  const handleGoByUserPosts = () => {
+    navigate("/postsUsuario");
+  };
+  return (
+    <div className="col mt-5">
+      <button
+        className="btn btn-outline-primary btn-lg "
+        onClick={handleGoAllPosts}
+      >
+        Ver todos posts
+      </button>
+      <p />
+      <button
+        className="btn btn-outline-primary btn-lg"
+        onClick={handleGoByUserPosts}
+      >
+        Ver posts por usuario
+      </button>
+    </div>
+  );
 };

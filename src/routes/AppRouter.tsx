@@ -1,8 +1,7 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "../auth";
-import { PostsPage, PostsUsuarioPage, Home, PostsRoutes } from "../posts";
-import { Navbar } from "../ui";
+import { PostsRoutes } from "../posts";
 
 export const AppRouter = () => {
   return (

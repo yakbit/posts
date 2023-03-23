@@ -36,7 +36,7 @@ export const PostsUsuarioPage = () => {
           ))}
         </select>
       </label>
-
+      <hr />
       <List
         posts={posts}
         loading={loading}

@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Navigate,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
-
-interface LocationState {
-  userId: number;
-  id: number;
-  title: String;
-  body: String;
-}
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export const PostPage = () => {
   const { id, ...rest } = useParams();

@@ -16,7 +16,6 @@ interface Props {
 export const List = (props: Props) => {
   const { posts, loading, error, userId } = props || {};
   const list = getPostsByUserId({ posts, userId });
-  console.log(list);
   return (
     <div className="row rows-cols-1 row-cols-md-3 g-3">
       {error && <li>Error: {error}</li>}
