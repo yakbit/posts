@@ -13,6 +13,7 @@ export const useFetch = (url: URL) => {
     loading: Boolean;
     error: String;
   }
+
   const [posts, setPosts] = useState<useFetchState["posts"]>([]);
   const [loading, setLoading] = useState<useFetchState["loading"]>(true);
   const [error, setError] = useState<useFetchState["error"]>("");
@@ -21,8 +22,10 @@ export const useFetch = (url: URL) => {
     setLoading(true);
     fetch(url)
       .then((response) => response.json())
+
       .then((data) => setPosts(data))
       .catch((error) => setError(error))
+
       .finally(() => setLoading(false));
   }, []);
 
