@@ -30,6 +30,14 @@ export const Navbar = () => {
           >
             Posts por usuario
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link ${isActive ? "activa" : ""}`
+            }
+            to="/newPost"
+          >
+            Añadir nuevo post
+          </NavLink>
         </div>
       </div>
 

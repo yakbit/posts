@@ -19,13 +19,18 @@ export const Filter = (props: Props) => {
     const data = posts.filter((item) =>
       item.title.toLowerCase().trim().includes(target.value)
     );
+    console.log(target.name);
     onFiltrar(data);
   };
   return (
     <div>
       <label>
         Fitrar por título:{" "}
-        <input name="inputFiltro" onChange={handelFiltrar}></input>
+        <input
+          style={{ borderColor: "#0dcaf0" }}
+          name="inputFiltro"
+          onChange={handelFiltrar}
+        ></input>
       </label>
     </div>
   );
