@@ -21,7 +21,7 @@ Las citas se consiguen con una llamada a API externa de citas (https://jsonplace
 
 Tecnologías usadas para el proyecto: React, TypeScript, CSS.
 
-# Ver [DEMO](https://posts-de-jsonplaceholder.netlify.app/home "Heading link")
+# Ver [DEMO](https://posts-de-jsonplaceholder.netlify.app/ "Heading link")
 
 ### Instrucciones de uso:
 
