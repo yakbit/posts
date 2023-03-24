@@ -2,7 +2,7 @@
 
 ### filtrado de posts:
 
-![]()
+![](https://github.com/cleverpy-technical-test/frontend_oleh/blob/main/src/img/vista_filtrar_posts.JPG)
 
 # Getting Started with Create React App
 
