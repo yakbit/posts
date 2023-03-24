@@ -19,7 +19,6 @@ export const Filter = (props: Props) => {
     const data = posts.filter((item) =>
       item.title.toLowerCase().trim().includes(target.value)
     );
-    console.log(target.name);
     onFiltrar(data);
   };
   return (

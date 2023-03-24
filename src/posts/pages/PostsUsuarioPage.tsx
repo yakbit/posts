@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { List } from "../../components/List";
 import { useFetch } from "../../hooks/useFetch";
@@ -11,9 +11,7 @@ export const PostsUsuarioPage = () => {
 
   const storePosts = useSelector((store: AppStore) => store.posts);
   const dispatch = useDispatch();
-  /*  useEffect(() => {
-    dispatch(addPost([...storePosts]));
-  }, []); */
+
   const handleRecibirDatos = () => {
     dispatch(addPost(posts));
   };
@@ -42,8 +40,6 @@ export const PostsUsuarioPage = () => {
           onChange={(event) => onSeleccionado(event)}
           value={usuarioSeleccionado}
         >
-          {/* <option value="default">Selecciona usuario...</option> */}
-
           {listaFiltrada?.map((userId) => (
             <option key={userId} value={userId}>
               {userId}

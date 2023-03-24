@@ -15,10 +15,6 @@ export const Home = () => {
   };
   return (
     <div className="col mt-5 animate__bounceInLeft">
-      {/*  <h1 className="animate__animated animate__flipInX">
-        animate__flipInX
-      </h1> */}
-
       <button
         className="btn btn-outline-primary btn-lg animate__animated animate__bounceInLeft"
         style={{ width: 300 }}
