@@ -13,6 +13,9 @@ export const Home = () => {
   const handleNewPost = () => {
     navigate("/newPost");
   };
+  const handleFavoritos = () => {
+    navigate("/fovorites");
+  };
   return (
     <div className="col mt-5 animate__bounceInLeft">
       <button
@@ -37,6 +40,14 @@ export const Home = () => {
         onClick={handleNewPost}
       >
         Añadir nuevo post
+      </button>
+      <p />
+      <button
+        className="btn btn-outline-primary btn-lg animate__animated animate__bounceInLeft"
+        style={{ width: 300 }}
+        onClick={handleFavoritos}
+      >
+        Ver posts favoritos
       </button>
     </div>
   );

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux/es/exports";
 import { Filter } from "../../components/Filter";
-import { Form } from "../../components/Form";
 import { List } from "../../components/List";
 import { useFetch } from "../../hooks/useFetch";
 import { addPost } from "../../redux/states/posts";
@@ -36,6 +35,7 @@ export const PostsPage: React.FC<PostPageInterface> = () => {
 
   return (
     <>
+      <h1>Todos posts</h1>
       <button className="btn btn-primary mt-4" onClick={handleRecibirDatos}>
         Recibir datos de fuera
       </button>

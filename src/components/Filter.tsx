@@ -15,16 +15,19 @@ export const Filter = (props: Props) => {
   const [inputValue, setInputValue] = useState("");
   const handelFiltrar = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target;
-    setInputValue(target.value);
+    setInputValue(target.value.toLowerCase());
     const data = posts.filter((item) =>
-      item.title.toLowerCase().trim().includes(target.value)
+      item.title
+        .toLowerCase()
+        .trim()
+        .includes(target.value.toLowerCase().trim())
     );
     onFiltrar(data);
   };
   return (
     <div>
       <label>
-        Fitrar por título:{" "}
+        Filtrar por título:{" "}
         <input
           style={{ borderColor: "#0dcaf0" }}
           name="inputFiltro"

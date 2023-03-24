@@ -38,6 +38,14 @@ export const Navbar = () => {
           >
             Añadir nuevo post
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link ${isActive ? "activa" : ""}`
+            }
+            to="/fovorites"
+          >
+            Posts favoritos
+          </NavLink>
         </div>
       </div>
 
