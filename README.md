@@ -38,4 +38,4 @@ Tecnologías usadas para el proyecto: React, TypeScript, CSS.
   - Mostrar citas por userId
   - Crear una nueva cita
   - Dentro de cada cita ha posibilidad de añadirla a la lista de favoritos.
-  - Mostrar lista de citas marcadas como favoritas
+  - Mostrar lista de citas marcadas como favoritas.
